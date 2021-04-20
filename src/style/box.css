@@ -1,0 +1,29 @@
+.container{
+    position: absolute;
+    top :0;
+    right:0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.box{
+    position: absolute;
+    top:30%;
+    right: 30%;
+    width :40vw;
+    height: 25vh;
+    background-color: white;
+    padding: 30px;
+}
+.box h1{
+    text-align: center;
+}
+.wrep-btn{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.box input{
+    width: 20vw;
+    margin: 0 100px;
+}
