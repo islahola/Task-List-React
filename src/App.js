@@ -16,8 +16,19 @@ export default class App extends Component {
           id : 2,
           title : "Waktu olla Mandi"
       }
-    ]
+    ],
+    isEdit : false
   } 
+  isOpen = () =>{
+    this.setState ({
+      isEdit : true
+    })
+  }
+  isClose = () =>{
+    this.setState({
+      isEdit : false
+    })
+  }
   delById = id =>{
     this.setState({
       todos : this.state.todos.filter(item => item.id !== id)
@@ -38,22 +49,28 @@ export default class App extends Component {
     const {todos} = this.state;
     return (
       <div>
-        <div className="app">
-      <div className="logo">
-        <img src={logo} alt="logo"/>
-        <h3>Task List</h3>
-      </div>
-      <BoxModel/>
-      <div className="list">
-        {todos.map(item =>
-           <TodoList key={item.id} todos={item} del = {this.delById}/>  
-        )}
-      </div>
-      <div className="form">
-        <FormItem add={this.add}/>
-      </div>
+      <div className="app">
+        <div className="logo">
+          <img src={logo} alt="logo"/>
+          <h3>Task List</h3>
+        </div>
+        <BoxModel  
+          edit ={this.state.isEdit} 
+          close ={this.isClose}/>
+        <div className="list">
+          {todos.map(item =>
+            <TodoList key={item.id} 
+            todos={item}
+            del = {this.delById}
+            open = {this.isOpen}
+            />  
+          )}
+        </div>
+        <div className="form">
+          <FormItem add={this.add}/>
+        </div>
     </div>
-      </div>
+    </div>
     )
   }
 }

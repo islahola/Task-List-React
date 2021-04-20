@@ -8,12 +8,15 @@
 }
 .box{
     position: absolute;
-    top:30%;
-    right: 30%;
+    top:40%;
+    left: 50%;
     width :40vw;
     height: 25vh;
     background-color: white;
     padding: 30px;
+    transform: translate(-50%,-50%);
+    animation-name: show;
+    animation-duration: 0.8s;
 }
 .box h1{
     text-align: center;
@@ -26,4 +29,12 @@
 .box input{
     width: 20vw;
     margin: 0 100px;
+}
+@keyframes show {
+    from {
+        top : -1000px;
+    }
+    to{
+        transform: translate(-50%,-50%);
+    }
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import Button from './Button'
 import PropTypes from 'prop-types'
 
-function TodoList({todos,del}) {
+function TodoList({todos,del,open}) {
     const delTask = id =>{
         del(id)
     }
@@ -25,7 +25,7 @@ function TodoList({todos,del}) {
         <div style = {todo}>
             <h3>{todos.title}</h3>
             <div style = {btn}>
-                <Button variant = "succes" text ="edit"/>
+                <Button variant = "succes" text ="edit" action={open}/>
                 <Button variant = "warning" text ="delete" action={() => delTask(todos.id)}/>
             </div>
         </div>
