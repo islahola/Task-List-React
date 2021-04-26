@@ -25,7 +25,7 @@ function TodoList({todos,del,open}) {
         <div style = {todo}>
             <h3>{todos.title}</h3>
             <div style = {btn}>
-                <Button variant = "succes" text ="edit" action={open}/>
+                <Button variant = "succes" text ="edit" action={() => open(todos.id,todos.title)}/>
                 <Button variant = "warning" text ="delete" action={() => delTask(todos.id)}/>
             </div>
         </div>
